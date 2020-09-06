@@ -25,29 +25,29 @@ DROP TABLE IF EXISTS `entrepreneurs`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `entrepreneurs` (
-  `id` int NOT NULL,
-  `firstname` varchar(45) DEFAULT NULL,
-  `lastname` varchar(45) DEFAULT NULL,
-  `address` text,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `firstname` varchar(200) DEFAULT NULL,
+  `lastname` varchar(200) DEFAULT NULL,
+  `address` longtext,
   `cp` int DEFAULT NULL,
-  `city` varchar(45) DEFAULT NULL,
-  `country` varchar(45) DEFAULT NULL,
-  `mail` text,
-  `password` text,
+  `city` varchar(200) DEFAULT NULL,
+  `country` varchar(200) DEFAULT NULL,
   `phone` int DEFAULT NULL,
-  `corporate_name` text,
+  `mail` mediumtext,
+  `corporate_name` mediumtext,
   `siret` int DEFAULT NULL,
   `share_capital` int DEFAULT NULL,
   `sales` int DEFAULT NULL,
   `financial_needs` int DEFAULT NULL,
-  `other_needs` tinytext,
-  `project_title` varchar(45) DEFAULT NULL,
-  `category` varchar(45) DEFAULT NULL,
-  `description` text,
-  `web` text,
-  `video_link` text,
+  `other_needs` mediumtext,
+  `project_title` mediumtext,
+  `category` varchar(200) DEFAULT NULL,
+  `description` longtext,
+  `web` mediumtext,
+  `video_link` mediumtext,
+  `password` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -56,6 +56,7 @@ CREATE TABLE `entrepreneurs` (
 
 LOCK TABLES `entrepreneurs` WRITE;
 /*!40000 ALTER TABLE `entrepreneurs` DISABLE KEYS */;
+INSERT INTO `entrepreneurs` VALUES (1,'sara','ubio','hk=bnkl,m;hjklmù',5678,'FHJMBZ','KLNJZB',87652,'FCGVHBJNK','GHJKL',4567890,567890,67890,45789,'non','XFCGVHJKL','Écologie','FGHJK?L','GHJKLMmlkk','FGHJKL','hklk'),(2,'sara','ubio','hk=bnkl,m;hjklmù',5678,'FHBZ','KLNJZB',87652,'FCGVHBJNK','GHJKL',4567890,567890,67890,45789,'non','XFCGVHJKL','Écologie','FGHJK?L','GHJKLMmlkk','FGHJKL','hklk'),(3,'sarah','rubio','hk=bnkl,m;hjklmù',5678,'FHBZ','KLNJZB',87652,'FCGVHBJNK','GHJKL',4567890,567890,67890,45789,'non','XFCGVHJKL','Écologie','FGHJK?L','GHJKLMmlkk','FGHJKL','hklk'),(4,'rubio','sarah','parentie',24190,'Chantérac','france',875378,'shlm','fghjkl',34567890,4567890,4567890,56789,'non','GHJK','Social','DFGHJKL?','FCGVHBJNK?L','DFGHJKL','');
 /*!40000 ALTER TABLE `entrepreneurs` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -135,4 +136,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-09-06 19:44:52
+-- Dump completed on 2020-09-06 21:57:25
