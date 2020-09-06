@@ -109,51 +109,51 @@ app.post("/entrepreneurs", (req, res) => {
 
 // requête POST sur la table projets :
 app.post("/projets", (req, res) => {
-  console.log(req.body);
 
-      let titleval = req.body.title;
-      let categoryval = req.body.category;
-      let descriptionval = req.body.description;
-      let financialneedsval = req.body.financial_needs;
-      let otherneedsval = req.body.other_needs;
-      let videolinkval = req.body.video_link;
-      let webval = req.body.web;
+    console.log(req.body);
+    let titleval = req.body.title;
+    let categoryval = req.body.category;
+    let descriptionval = req.body.description;
+    let financialneedsval = req.body.financial_needs;
+    let otherneedsval = req.body.other_needs;
+    let videolinkval = req.body.video_link;
+    let webval = req.body.web;
 
-      let sql = "INSERT INTO projets (title, category, description, financial_needs, other_needs, video_link, web) VALUES ('" + titleval + "', '" + categoryval + "', '" + descriptionval + "', '" + financialneedsval + "', '" + otherneedsval + "', '" + videolinkval + "', '" + webval + "')";
+    let sql = "INSERT INTO projets (title, category, description, financial_needs, other_needs, video_link, web) VALUES ('" + titleval + "', '" + categoryval + "', '" + descriptionval + "', '" + financialneedsval + "', '" + otherneedsval + "', '" + videolinkval + "', '" + webval + "')";
 
-      db.query(sql, (err, result) => {
+    db.query(sql, (err, result) => {
         if(err) throw err;
         res.status(200).send(result);
-      })
-    }
+    })
+}
 );
 
 // requête POST sur la table investisseurs :
 app.post("/investisseurs", (req, res) => {
-  console.log(req.body);
+  
+    console.log(req.body);
+    let firstnameval = req.body.firstname;
+    let lastnameval = req.body.lastname;
+    let addressval = req.body.address;
+    let cpval = req.body.cp;
+    let cityval = req.body.city;
+    let countryval = req.body.country;
+    let phoneval = req.body.phone;
+    let mailval = req.body.mail;
+    let riskval = req.body.risk;
+    let categoriesval = req.body.categories;
+    let amountinvestval = req.body.amount_to_invest;
+    let profitabilityval = req.body.profitability;
+    let whyinvestval = req.body.why_invest;
+    let passwordval = req.body.password;
 
-      let firstnameval = req.body.firstname;
-      let lastnameval = req.body.lastname;
-      let addressval = req.body.address;
-      let cpval = req.body.cp;
-      let cityval = req.body.city;
-      let countryval = req.body.country;
-      let phoneval = req.body.phone;
-      let mailval = req.body.mail;
-      let passwordval = req.body.password;
-      let riskval = req.body.risk;
-      let amountinvestval = req.body.amount_to_invest;
-      let profitabilityval = req.body.profitability;
-      let whyinvestval = req.body.why_invest;
+    let sql = "INSERT INTO investisseurs (firstname, lastname, address, cp, city, country, phone, mail, risk, amount_to_invest, profitability, categories, why_invest, password) VALUES ('" + firstnameval + "', '" + lastnameval + "', '" + addressval + "', '" + cpval + "', '" + cityval + "', '" + countryval + "', '" + phoneval + "', '" + mailval + "', '" + riskval + "', '" + amountinvestval + "', '" + profitabilityval + "', '" + categoriesval + "', '" +  whyinvestval + "', '" + passwordval + "')";
 
-      let sql = "INSERT INTO investisseurs (firstname, lastname, address, cp, city, country, phone, mail, password, risk, amount_to_invest, profitability, why_invest) VALUES ('" + firstnameval + "', '" + lastnameval + "', '" + addressval + "', '" + cpval + "', '" + cityval + "', '" + countryval + "', '" + phoneval + "', '" + mailval + "', '" + passwordval + "', '" + riskval + "', '" + amountinvestval + "', '" + profitabilityval + "', '" + whyinvestval + "')";
-
-      db.query(sql, (err, result) => {
+    db.query(sql, (err, result) => {
         if(err) throw err;
         res.status(200).send(result);
-      })
-    }
-);
+    })
+});
 
 // Create entrepreneurs table : fait sur Workbench : plus sécure
 // app.get('/createentrepreneurstable', (req, res) => {

@@ -47,7 +47,7 @@ CREATE TABLE `entrepreneurs` (
   `video_link` mediumtext,
   `password` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -56,7 +56,7 @@ CREATE TABLE `entrepreneurs` (
 
 LOCK TABLES `entrepreneurs` WRITE;
 /*!40000 ALTER TABLE `entrepreneurs` DISABLE KEYS */;
-INSERT INTO `entrepreneurs` VALUES (1,'sara','ubio','hk=bnkl,m;hjklmù',5678,'FHJMBZ','KLNJZB',87652,'FCGVHBJNK','GHJKL',4567890,567890,67890,45789,'non','XFCGVHJKL','Écologie','FGHJK?L','GHJKLMmlkk','FGHJKL','hklk'),(2,'sara','ubio','hk=bnkl,m;hjklmù',5678,'FHBZ','KLNJZB',87652,'FCGVHBJNK','GHJKL',4567890,567890,67890,45789,'non','XFCGVHJKL','Écologie','FGHJK?L','GHJKLMmlkk','FGHJKL','hklk'),(3,'sarah','rubio','hk=bnkl,m;hjklmù',5678,'FHBZ','KLNJZB',87652,'FCGVHBJNK','GHJKL',4567890,567890,67890,45789,'non','XFCGVHJKL','Écologie','FGHJK?L','GHJKLMmlkk','FGHJKL','hklk'),(4,'rubio','sarah','parentie',24190,'Chantérac','france',875378,'shlm','fghjkl',34567890,4567890,4567890,56789,'non','GHJK','Social','DFGHJKL?','FCGVHBJNK?L','DFGHJKL','');
+INSERT INTO `entrepreneurs` VALUES (1,'sara','ubio','hk=bnkl,m;hjklmù',5678,'FHJMBZ','KLNJZB',87652,'FCGVHBJNK','GHJKL',4567890,567890,67890,45789,'non','XFCGVHJKL','Écologie','FGHJK?L','GHJKLMmlkk','FGHJKL','hklk'),(2,'sara','ubio','hk=bnkl,m;hjklmù',5678,'FHBZ','KLNJZB',87652,'FCGVHBJNK','GHJKL',4567890,567890,67890,45789,'non','XFCGVHJKL','Écologie','FGHJK?L','GHJKLMmlkk','FGHJKL','hklk'),(3,'sarah','rubio','hk=bnkl,m;hjklmù',5678,'FHBZ','KLNJZB',87652,'FCGVHBJNK','GHJKL',4567890,567890,67890,45789,'non','XFCGVHJKL','Écologie','FGHJK?L','GHJKLMmlkk','FGHJKL','hklk'),(4,'rubio','sarah','parentie',24190,'Chantérac','france',875378,'shlm','fghjkl',34567890,4567890,4567890,56789,'non','GHJK','Social','DFGHJKL?','FCGVHBJNK?L','DFGHJKL',''),(5,'sarah','rubio','hk=bnkl,m;hjklmù',5678,'FHBZ','KLNJZB',87652,'FCGVHBJNK','GHJKL',4567890,567890,67890,45789,'non','XFCGVHJKL','Écologie','FGHJK?L','GHJKLMmlkk','FGHJKL','hklk');
 /*!40000 ALTER TABLE `entrepreneurs` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -68,22 +68,23 @@ DROP TABLE IF EXISTS `investisseurs`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `investisseurs` (
-  `id` int NOT NULL,
-  `firstname` varchar(45) DEFAULT NULL,
-  `lastname` varchar(45) DEFAULT NULL,
-  `address` text,
-  `cp` int DEFAULT NULL,
-  `city` varchar(45) DEFAULT NULL,
-  `country` varchar(45) DEFAULT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `firstname` varchar(100) DEFAULT NULL,
+  `lastname` varchar(100) DEFAULT NULL,
+  `address` longtext,
+  `cp` int NOT NULL,
+  `city` longtext,
+  `country` varchar(100) DEFAULT NULL,
   `phone` int DEFAULT NULL,
   `mail` text,
-  `password` text,
   `risk` text,
   `amount_to_invest` int DEFAULT NULL,
   `profitability` int DEFAULT NULL,
+  `categories` varchar(500) DEFAULT NULL,
   `why_invest` text,
+  `password` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -92,6 +93,7 @@ CREATE TABLE `investisseurs` (
 
 LOCK TABLES `investisseurs` WRITE;
 /*!40000 ALTER TABLE `investisseurs` DISABLE KEYS */;
+INSERT INTO `investisseurs` VALUES (1,'sarah','rubio','tutu',1,'fra','franc',689,'Hjkl','gjhbk',5678,5678,'Bn','jhk','ty'),(2,'rubio','sarahk','parentie',24190,'chanterac','france',7865,'sub@live.fr','risk0',56,67,'education','aider au developpement de projet','tutu'),(3,'he','sraah','hekje',56,'canta','france',7,'shsks@kl','risk1',4,6,'ecologie','aider au developpement de projet','tut');
 /*!40000 ALTER TABLE `investisseurs` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -136,4 +138,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-09-06 21:57:25
+-- Dump completed on 2020-09-07  0:53:58
