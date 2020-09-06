@@ -75,30 +75,8 @@ app.get('/projets3', (req, res) => {
 // Envoyer tous les champs du formulaire d'inscription entrepreneur
 // sur la BDD / table entrepreneurs : requête POST
 app.post("/entrepreneurs", (req, res) => {
-  console.log(req.body);
 
-  if(req.body.firstname
-    && req.body.lastname
-    && req.body.address
-    && req.body.cp
-    && req.body.city
-    && req.body.country
-    && req.body.phone
-    && req.body.mail
-    && req.body.corporate_name
-    && req.body.siret 
-    && req.body.share_capital
-    && req.body.sales
-    && req.body.financial_needs
-    && req.body.other_needs
-    && req.body.project_title
-    && req.body.category
-    && req.body.description
-    && req.body.web
-    && req.body.video_link
-    && req.body.password) {
-
-      console.log(req.body.lastname);
+      console.log(req.body);
       let firstnameval = req.body.firstname;
       let lastnameval = req.body.lastname;
       let addressval = req.body.address;
@@ -121,25 +99,17 @@ app.post("/entrepreneurs", (req, res) => {
       let passwordval = req.body.password;
 
       let sql = "INSERT INTO entrepreneurs (firstname, lastname, address, cp, city, country, phone, mail, corporate_name, siret, share_capital, sales, financial_needs, other_needs, project_title, category, description, web, video_link, password) VALUES ('" + firstnameval + "', '" + lastnameval + "', '" + addressval + "', '" + cpval + "', '" + cityval + "', '" + countryval + "', '" + phoneval + "', '" + mailval + "', '" + corporatenameval + "', '" + siretval + "', '" + sharecapitalval + "', '" + salesval + "', '" + financialneedsval + "', '" + otherneedsval + "', '" + projecttitleval + "', '" + categoryval + "', '" + descriptionval + "', '" + webval + "', '" + videolinkval + "', '" + passwordval + "')";
-
+      console.log(sql);
       db.query(sql, (err, result) => {
         if(err) throw err;
         res.status(200).send(result);
       })
     }
-});
+);
 
 // requête POST sur la table projets :
 app.post("/projets", (req, res) => {
   console.log(req.body);
-
-  if (req.body.title
-    && req.body.category
-    && req.body.description
-    && req.body.financial_needs
-    && req.body.other_needs
-    && req.body.video_link
-    && req.body.web) {
 
       let titleval = req.body.title;
       let categoryval = req.body.category;
@@ -156,25 +126,11 @@ app.post("/projets", (req, res) => {
         res.status(200).send(result);
       })
     }
-});
+);
 
 // requête POST sur la table investisseurs :
 app.post("/investisseurs", (req, res) => {
   console.log(req.body);
-
-  if (req.body.firstname
-    && req.body.lastname
-    && req.body.address
-    && req.body.cp
-    && req.body.city
-    && req.body.country
-    && req.body.phone
-    && req.body.mail
-    && req.body.password
-    && req.body.risk
-    && req.body.amount_to_invest
-    && req.body.profitability
-    && req.body.why_invest) {
 
       let firstnameval = req.body.firstname;
       let lastnameval = req.body.lastname;
@@ -197,7 +153,7 @@ app.post("/investisseurs", (req, res) => {
         res.status(200).send(result);
       })
     }
-});
+);
 
 // Create entrepreneurs table : fait sur Workbench : plus sécure
 // app.get('/createentrepreneurstable', (req, res) => {
